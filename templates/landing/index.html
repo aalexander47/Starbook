@@ -1,0 +1,156 @@
+<!-- filepath: d:\Desktop\project\starbook\core\templates\landing\index.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Star Book{% endblock %}
+{% block content %}
+<!-- Section 1: Swiper/Image Carousel -->
+<section class="carousel">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{% static 'images/banner_1.png' %}" alt="Slide 1"></div>
+            <div class="swiper-slide"><img src="{% static 'images/banner_2.png' %}" alt="Slide 2"></div>
+            <div class="swiper-slide"><img src="{% static 'images/banner_3.png' %}" alt="Slide 3"></div>
+        </div>
+    </div>
+</section>
+<!-- Section 2: Collage of Containers -->
+<section class="collage">
+    <div class="collage-grid">
+        <div class="collage-item">
+            <img src="{% static 'images/web1.png' %}" alt="Logo 1">
+            <a href="https://www.happy777.live/" class="btn">Explore</a>
+        </div>
+        <div class="collage-item">
+            <img src="{% static 'images/web2.png' %}" alt="Logo 2">
+            <a href="https://silverbhai.org/" class="btn">Explore</a>
+        </div>
+        <div class="collage-item">
+            <img src="{% static 'images/web3.png' %}" alt="Logo 3">
+            <a href="https://www.betbhai9.red/" class="btn">Explore</a>
+        </div>
+    </div>
+</section>
+<!-- Section 3: Timeline -->
+<section class="timeline">
+    <h2 class="timeline-heading">How to create your account</h2>
+    <div class="timeline-background">
+        <div class="slideshow">
+            <img src="{% static 'images/slide4.jpg' %}" alt="Slide 1">
+            <img src="{% static 'images/slide2.jpeg' %}" alt="Slide 2"> 
+            <img src="{% static 'images/slide5.jpg' %}" alt="Slide 3">
+        </div>
+    </div>
+    <div class="timeline-container">
+        <div class="timeline-items">
+            <div class="timeline-item" id="step1">
+                <img src="{% static 'images/register.png' %}" alt="Step 1 Icon" class="timeline-icon">
+                <p>Step 1: Create Your Account</p>
+                <p>Register and create your account on Whatsapp Instantly..</p> <!-- Added second line -->
+            </div>
+            <div class="timeline-item" id="step2">
+                <img src="{% static 'images/games.png' %}" alt="Step 2 Icon" class="timeline-icon">
+                <p>Step 2: Choose Youe Game or Sports.</p>
+                <p>Select from various range of gaming options..</p> <!-- Added second line -->
+            </div>
+            <div class="timeline-item" id="step3">
+                <img src="{% static 'images/money.png' %}" alt="Step 3 Icon" class="timeline-icon">
+                <p>Step 3: Place Your Bets</p>
+                <p>Make informed decisions with our expert insights and competitive odds.</p> <!-- Added second line -->
+            </div>
+            <div class="timeline-item" id="step4">
+                <img src="{% static 'images/money2.png' %}" alt="Step 4 Icon" class="timeline-icon">
+                <p>Step 4: Win Big.</p>
+                <p>Withdraw your amount instantly and watch your winnings grow.</p> <!-- Added second line -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section 4: 3x2 Grid -->
+<section class="grid">
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="{% static 'images/indian rummy.jpeg' %}" alt="Grid Item 1">
+            <a href="https://wa.me/7770005439" class="btn" target="_blank" rel="noopener noreferrer">Get ID </a>
+        </div>
+        <div class="grid-item">
+            <img src="{% static 'images/andarbhar.jpeg' %}" alt="Grid Item 2">
+            <a href="https://wa.me/7770005439" class="btn" target="_blank" rel="noopener noreferrer">Get ID</a>
+        </div>
+        <div class="grid-item">
+            <img src="{% static 'images/backjack.png' %}" alt="Grid Item 3">
+            <a href="https://wa.me/7770005439" class="btn" target="_blank" rel="noopener noreferrer">Get ID</a>
+        </div>
+        <div class="grid-item">
+            <img src="{% static 'images/teen patti.jpeg' %}" alt="Grid Item 4">
+            <a href="https://wa.me/7770005439" class="btn" target="_blank" rel="noopener noreferrer">Get ID</a>
+        </div>
+        <div class="grid-item">
+            <img src="{% static 'images/roulette2.jpg' %}" alt="Grid Item 5">
+            <a href="https://wa.me/7770005439" class="btn" target="_blank" rel="noopener noreferrer">Get ID</a>
+        </div>
+        <div class="grid-item">
+            <img src="{% static 'images/indian slots.jpg' %}" alt="Grid Item 6">
+            <a href="https://wa.me/7770005439" class="btn" target="_blank" rel="noopener noreferrer">Get ID</a>
+        </div>
+    </div>
+</section>
+<!-- New Section: Icon Grid -->
+<section class="icon-grid">
+    <h2 class="icon-grid-heading">Why Only Starbook?</h2> <!-- Added heading -->
+    <div class="icon-grid-container">
+        <div class="icon-grid-item">
+            <img src="{% static 'images/1.png' %}" alt="Icon 1">
+            <h2>Wide Ranges of Sports & Games</h2>
+            <p>We cover all your favorite gaming options at one place the games included are cricket, tennis, football, fantasy games many more</p>
+        </div>
+        <div class="icon-grid-item">
+            <img src="{% static 'images/2.png' %}" alt="Icon 2">
+            <h2>Live Gaming & Real Time Action</h2>
+            <p>Get into the inspire of live events with up to the minute odds and flawless in play gaming options.</p>
+        </div>
+        <div class="icon-grid-item">
+            <img src="{% static 'images/3.png' %}" alt="Icon 3">
+            <h2>Instant Deposits & Withdrawals</h2>
+            <p>We provide multiple options, we make sure that your transactions will be rapid, secure and effortless.</p>
+        </div>
+        <div class="icon-grid-item">
+            <img src="{% static 'images/4.png' %}" alt="Icon 4">
+            <h2>Secure & Reliable</h2>
+            <p>Your safety is our first priority we use the latest encryption technologies to ensure that your private and financial information will always preserved.</p>
+        </div>
+        <div class="icon-grid-item">
+            <img src="{% static 'images/5.png' %}" alt="Icon 5">
+            <h2>Exciting Welcome Rewards and Bonus</h2>
+            <p>Get more returns out of your bets with exclusive bonus and weekly rewards that keep the thrill going on</p>
+        </div>
+        <div class="icon-grid-item">
+            <img src="{% static 'images/6.png' %}" alt="Icon 6">
+            <h2>24/7 Customer Support</h2>
+            <p>Our dedicated support team will be available any time around the clock to assist you with any questions or issues.</p>
+        </div>
+    </div>
+</section>
+<!-- New Section: Payment Section -->
+<section class="payment-section">
+    <h2 class="payment-heading">Secure Payment Options</h2>
+    <div class="payment-carousel swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{% static 'images/upi.png' %}" alt="Payment Option 1"></div>
+            <div class="swiper-slide"><img src="{% static 'images/gpay.png' %}" alt="Payment Option 2"></div>
+            <div class="swiper-slide"><img src="{% static 'images/phonepay.png' %}" alt="Payment Option 3"></div>
+            <div class="swiper-slide"><img src="{% static 'images/neft.png' %}" alt="Payment Option 4"></div>
+            <div class="swiper-slide"><img src="{% static 'images/crypto.png' %}" alt="Payment Option 5"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section 5: FAQs -->
+<section class="faqs">
+    <!-- Added centered text -->
+    <div class="faq-disclaimer">
+        <p>Starbooks777.com is owned and operated by Starbooks Club, a private entity operating under international business regulations. Starbooks Club provides entertainment-based gaming services and payment management support exclusively for adult customers.</p>
+        <p>Gaming involves financial risk and may be addictive. Please play responsibly. By using this platform, you confirm that you are 18 years of age or older and are participating at your own discretion.</p>
+    </div>
+</section>
+{% endblock %}

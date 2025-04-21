@@ -1,0 +1,58 @@
+<!-- filepath: d:\Desktop\project\starbook\core\templates\base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Starbook{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loader.css' %}"> <!-- Added timeline CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="icon" href="{% static 'images/starbookicon.png' %}" type="image/x-icon"> <!-- Added favicon -->
+    <script src="{% static 'js/timeline.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="/"><img src="{% static 'images/starbook.png' %}" alt="Starbook Logo"></a>
+            </div>
+            <div class="header-button">
+                <a href="https://wa.me/7770005439" class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <img src="{% static 'images/phone.png' %}" alt="Phone Icon" class="phone-icon">
+                    7770005439
+                </a>
+            </div>
+        </div>
+        <!-- GIF Loader -->
+        <div class="loader-wrapper" id="page-loader">
+            <img src="{% static 'images/loader.gif' %}" alt="Loading..." class="gif-loader">
+        </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <p>&copy; 2025 Starbook. All rights reserved.</p>
+    </footer>
+    <script>
+        // Ensure loader is displayed for at least 3 seconds
+        window.addEventListener('load', function () {
+            const loader = document.getElementById('page-loader');
+            if (loader) {
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    loader.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => loader.style.display = 'none', 500); // Remove loader after fade-out
+                }, 3000); // Ensure loader is displayed for 3 seconds
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/swiper-init.js' %}"></script>
+</body>
+</html>

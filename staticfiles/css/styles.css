@@ -1,0 +1,1050 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #000000, #3a2a8c); /* Updated gradient to start with black */
+    color: #fff; /* Adjusted text color for contrast */
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure logo and button are on opposite sides */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    background: #000000; /* Match header background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    padding: 0.5rem 1rem; /* Adjust padding for better spacing */
+    border-bottom: 3px solid #FFD700; /* Golden border only on the bottom */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure logo and button are horizontally aligned */
+    width: 100%;
+}
+
+.logo {
+    flex: 0 0 auto; /* Ensure the logo stays on the leftmost side */
+}
+
+.logo img {
+    height: 80px; /* Adjust logo size */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+.header-button {
+    flex: 0 0 auto; /* Ensure the button stays on the rightmost side */
+}
+
+/* Prevent stacking of logo and button */
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+}
+
+/* Prevent stacking of logo and button on smaller devices */
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        justify-content: space-between; /* Ensure logo and button are side by side */
+    }
+
+    .logo img {
+        height: 50px; /* Adjust logo size for smaller screens */
+    }
+
+    .header-button .btn {
+        font-size: 0.8rem; /* Adjust button size for smaller screens */
+        padding: 0.3rem 0.6rem; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Ensure logo and button are side by side on smaller screens */
+@media (max-width: 768px) {
+    .header-container {
+        display: flex; /* Ensure flexbox layout */
+        flex-direction: row; /* Keep logo and button side by side */
+        align-items: center; /* Align items vertically */
+        justify-content: space-between; /* Space them apart */
+        width: 100%; /* Ensure full width */
+        gap: 0; /* Remove any gap */
+    }
+
+    .logo img {
+        height: 50px; /* Adjust logo size for smaller screens */
+    }
+
+    .header-button .btn {
+        font-size: 0.8rem; /* Adjust button size for smaller screens */
+        padding: 0.3rem 0.6rem; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Header Button Styling */
+.header-button .btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #FFD700; /* Golden text color */
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #20165d; /* Match header background */
+    border: none; /* Remove border */
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+
+.header-button .btn:hover {
+    background: #FFD700; /* Golden background on hover */
+    color: #20165d; /* Dark text color on hover */
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFD700; /* Golden glow */
+}
+
+.header-button .btn span {
+    position: absolute;
+    display: block;
+}
+
+.header-button .btn span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700); /* Golden animation */
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.header-button .btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #FFD700); /* Golden animation */
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+.header-button .btn span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #FFD700); /* Golden animation */
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+
+.header-button .btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #FFD700); /* Golden animation */
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
+
+.header-button .btn .phone-icon {
+    width: 16px; /* Reduced icon width */
+    height: 16px; /* Reduced icon height */
+    margin-right: 8px; /* Adjusted spacing between icon and text */
+}
+
+/* Main Content Styling */
+main {
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #20165d, #3a2a8c); /* Updated gradient */
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: #000000;
+    border: 2px solid #fff;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background: #fff;
+    color: #20165d;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+}
+
+.hero .btn span {
+    position: absolute;
+    display: block;
+}
+
+.hero .btn span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+}
+
+.hero .btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.hero .btn span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+.hero .btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+/* Features Section */
+.features {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative; /* Remove sticky behavior */
+    bottom: auto; /* Reset bottom positioning */
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Neon Button Styling */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+a.btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #03e9f4;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+}
+
+a.btn:hover {
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+}
+
+a.btn span {
+    position: absolute;
+    display: block;
+}
+
+a.btn span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+a.btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+a.btn span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+
+a.btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
+
+/* General Section Styling */
+section {
+    width: 100%; /* Ensure sections span the full width */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+/* Section 1: Swiper/Image Carousel */
+.carousel {
+    width: 100%;
+    height: 680px; /* Increased height for better visibility */
+    overflow: hidden;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    background: #000000; /* Changed to black */
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Section 2: Collage of Containers */
+.collage {
+    width: 100%; /* Ensure full width */
+    padding: 2rem 0; /* Remove side padding, keep vertical padding */
+    text-align: center;
+    background: #1a1a1a; /* Darker shade of black */
+    margin: 0; /* Remove any margin */
+}
+
+.collage-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.collage-item {
+    background: #333333; /* Dark gray for contrast */
+    color: #ffffff; /* White text for readability */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    text-align: center;
+    width: 350px; /* Adjusted width for rectangle */
+    height: 300px; /* Increased height for better content visibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Ensure text is centered */
+    gap: 1rem; /* Add spacing between logo and button */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Smooth transition for zoom, shadow, and border */
+    border: none; /* Remove the default border */
+}
+
+.collage-item:hover {
+    transform: scale(1.1); /* Zoom out the box */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7); /* Add a stronger shadow on hover */
+    border: 2px solid #FFD700; /* Add golden border on hover */
+}
+
+.collage-item img {
+    max-width: 60%; /* Adjusted size for better fit */
+    height: auto;
+    position: relative; /* Enable positioning */
+    left: -10px; /* Move the image slightly to the left */
+}
+
+.collage-item .btn {
+    padding: 0.5rem 1rem;
+    background: #000000; /* Black button */
+    color: #FFD700; /* Golden text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    position: relative; /* Enable positioning */
+    left: 15px; /* Move the button slightly to the right */
+}
+
+.collage-item .btn:hover {
+    background: #FFD700; /* Golden background on hover */
+    color: #000000; /* Black text on hover */
+}
+
+/* Section 3: Timeline */
+.timeline {
+    position: relative;
+    padding: 2rem;
+    background: transparent; /* Removed black background */
+    color: #ffffff; /* White text */
+    height: auto; /* Adjust height dynamically based on content */
+    margin-bottom: 2rem; /* Add spacing below the timeline section */
+    overflow: hidden; /* Ensure background images don't overflow */
+}
+
+.timeline-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the slideshow remains behind the timeline content */
+    overflow: hidden;
+}
+
+.timeline-background .slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: slideshow 12s infinite; /* Slideshow animation */
+    position: relative; /* Ensure the overlay applies correctly */
+}
+
+.timeline-background .slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the entire area */
+    flex-shrink: 0;
+}
+
+/* Add a black overlay for readability */
+.timeline-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Ensure the overlay is above the slideshow images */
+    pointer-events: none; /* Ensure the overlay does not interfere with slideshow functionality */
+}
+
+/* Ensure the timeline content is above the overlay */
+.timeline-container {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes slideshow {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+.timeline-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    width: 60%; /* Decreased width */
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #1a1a1a; /* Darker shade of black */
+    border-left: 4px solid #FFD700; /* Golden border */
+    color: #ffffff; /* White text */
+    text-align: center;
+    border-radius: 8px;
+    height: 200px; /* Adjusted height for rectangle shape */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.timeline-item:hover {
+    transform: scale(1.05); /* Scale up the container */
+    box-shadow: 0 8px 12px rgba(255, 215, 0, 0.7); /* Add a golden shadow */
+    border: 4px solid #FFD700; /* Golden border on hover */
+}
+
+/* Remove active styles */
+.timeline-item.active {
+    border-left: 4px solid #FFD700; /* Keep the golden border */
+    background: #1a1a1a; /* Ensure background remains unchanged */
+    color: #ffffff; /* Ensure text color remains unchanged */
+}
+
+.timeline-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.timeline-step {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    background: #FFD700; /* Golden background for step text */
+    color: #000000; /* Black text */
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.timeline-item img.timeline-icon {
+    width: 100px; /* Reduced width */
+    height: 100px; /* Reduced height */
+    margin-bottom: 0.5rem; /* Add spacing below the icon */
+}
+
+.timeline-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700; /* Golden color for the heading */
+    margin-bottom: 1rem;
+}
+
+/* Section 4: 3x2 Grid */
+.grid {
+    width: 100%; /* Ensure full width */
+    padding: 2rem 0; /* Vertical padding */
+    background: #1a1a1a; /* Darker shade of black */
+    margin: 0; /* Remove any margin */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 1rem; /* Spacing between grid items */
+}
+
+.grid-item {
+    background: #333333; /* Dark gray for contrast */
+    color: #ffffff; /* White text */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px #FFD700; /* Golden box shadow inside the border */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Spacing between image and button */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.grid-item img {
+    max-width: 60%; /* Adjusted size for better fit */
+    height: auto;
+}
+
+.grid-item .btn {
+    padding: 0.5rem 1rem;
+    background: #000000; /* Black button */
+    color: #FFD700; /* Golden text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    position: relative; /* Enable positioning */
+    left: 25px; /* Move the button further to the right */
+}
+
+.grid-item .btn:hover {
+    background: #FFD700; /* Golden background on hover */
+    color: #000000; /* Black text on hover */
+}
+
+/* Section 5: FAQs */
+.faqs {
+    width: 100%; /* Ensure full width */
+    padding: 2rem 0; /* Remove side padding, keep vertical padding */
+    background: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    margin: 0; /* Remove any margin */
+    border-top: 3px solid #FFD700; /* Add golden top border */
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+}
+
+.faq-item h3 {
+    margin-bottom: 0.5rem;
+    color: #FFD700; /* Golden headings */
+}
+
+faq-item p {
+    color: #ffffff; /* White text */
+}
+
+/* FAQ Disclaimer */
+.faq-disclaimer {
+    text-align: center; /* Center-align text */
+    margin: 0 auto; /* Center the container */
+    max-width: 800px; /* Limit the width for better readability */
+    color: #ffffff; /* Ensure text is white */
+    line-height: 1.4; /* Decrease line spacing */
+    font-size: 0.7rem; /* Decrease font size */
+}
+
+/* Hide Swiper navigation arrows and dots */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination {
+    display: none !important;
+}
+
+/* New Section: Icon Grid */
+.icon-grid {
+    width: 100%;
+    padding: 2rem 0;
+    background: #1a1a1a; /* Darker shade of black */
+    margin: 0;
+}
+
+.icon-grid-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700; /* Golden color for the heading */
+    margin-bottom: 2rem;
+}
+
+.icon-grid-container {
+    max-width: 1200px; /* Fixed box width */
+    margin: 0 auto; /* Center the container */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 1.5rem; /* Spacing between grid items */
+    padding: 0 1rem; /* Add padding for smaller screens */
+}
+
+.icon-grid-item {
+    background: #000000; /* Changed to black */
+    color: #ffffff; /* White text */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px #FFD700; /* Golden box shadow inside the border */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Spacing between elements */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.icon-grid-item:hover {
+    transform: scale(1.05); /* Scale up the grid item */
+    box-shadow: 0 8px 12px rgba(255, 215, 0, 0.7); /* Add a golden shadow on hover */
+}
+
+.icon-grid-item img {
+    max-width: 60px; /* Icon size */
+    height: auto;
+}
+
+.icon-grid-item h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #FFD700; /* Golden heading */
+}
+
+.icon-grid-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #cccccc; /* Light gray text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .icon-grid-container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .header-container {
+        flex-direction: row; /* Ensure logo and button are side by side */
+        justify-content: space-between; /* Space them apart */
+        align-items: center; /* Align items vertically */
+        gap: 0; /* Remove any gap */
+    }
+
+    .logo img {
+        height: 40px; /* Adjust logo size for smaller screens */
+    }
+
+    .header-button .btn {
+        font-size: 0.9rem; /* Adjust button size for smaller screens */
+        padding: 0.4rem 0.8rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    main h1 {
+        font-size: 2rem;
+    }
+
+    .collage-grid {
+        flex-direction: column;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding: 1rem;
+    }
+
+    .timeline-background .slideshow img {
+        object-fit: cover; /* Ensure images adapt to smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        height: auto; /* Adjust height dynamically based on Swiper content */
+    }
+
+    .swiper-container {
+        height: 100%; /* Ensure Swiper takes full height of the section */
+    }
+
+    .swiper-slide img {
+        height: auto; /* Ensure images adapt to their natural height */
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        height: 250px; /* Keep increased height */
+        width: 100%; /* Further increase width for better visibility */
+        padding: 1.5rem; /* Adjust padding for larger container */
+        margin: 0 auto; /* Center the timeline items */
+    }
+
+    .timeline-item img.timeline-icon {
+        width: 70px; /* Keep decreased icon width */
+        height: 70px; /* Keep decreased icon height */
+    }
+
+    .timeline-item p {
+        font-size: 0.9rem; /* Keep decreased paragraph font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        width: 100%; /* Ensure the timeline section spans the full width */
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .timeline-container {
+        width: 100%; /* Ensure the timeline container spans the full width */
+    }
+
+    .timeline-item {
+        height: 250px; /* Keep increased height */
+        width: 100%; /* Ensure full width for timeline items */
+        padding: 1.5rem; /* Adjust padding for larger container */
+        margin: 0 auto; /* Center the timeline items */
+    }
+
+    .timeline-item img.timeline-icon {
+        width: 70px; /* Keep decreased icon width */
+        height: 70px; /* Keep decreased icon height */
+    }
+
+    .timeline-item p {
+        font-size: 0.9rem; /* Keep decreased paragraph font size */
+    }
+}
+
+/* GIF Loader */
+.loader-wrapper {
+    position: fixed; /* Cover the entire page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Black background matching the page */
+    z-index: 9999; /* Ensure loader is above all other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease; /* Smooth fade-out transition */
+}
+
+.gif-loader {
+    width: 350px; /* Adjust the size of the GIF */
+    height: 350px;
+}
+
+/* Payment Section */
+.payment-section {
+    width: 100%;
+    padding: 2rem 0;
+    background: #1a1a1a; /* Darker shade of black */
+    text-align: center;
+    margin: 0;
+}
+
+.payment-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700; /* Golden color for the heading */
+    margin-bottom: 2rem;
+}
+
+.payment-carousel {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.payment-carousel .swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.payment-carousel .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto; /* Adjust width dynamically */
+}
+
+.payment-carousel .swiper-slide img {
+    max-width: 150px; /* Adjust image size */
+    height: auto;
+    margin: 0 1rem;
+    transition: transform 0.3s ease;
+}
+
+.payment-carousel .swiper-slide img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-carousel .swiper-slide img {
+        max-width: 100px; /* Adjust image size for smaller screens */
+    }
+}
