@@ -1,15 +1,24 @@
+<<<<<<< HEAD
 name: 🚀 Deployment to VPS - Starbook
+=======
+name: Deploy to VPS
+>>>>>>> 016c8c5 (Add GitHub Actions deployment workflow)
 
 on:
   push:
     branches:
+<<<<<<< HEAD
       - main  # Trigger the deployment on push to main branch
+=======
+      - main
+>>>>>>> 016c8c5 (Add GitHub Actions deployment workflow)
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+<<<<<<< HEAD
       # 1. Checkout repository
       - name: 📂 Checkout repo
         uses: actions/checkout@v3
@@ -23,3 +32,23 @@ jobs:
       # 3. Run deploy script on VPS
       - name: 🚀 Run deployment script
         run: ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} '/var/www/Starbook/deploy.sh'
+=======
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy to VPS
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: root
+        key: ${{ secrets.VPS_PRIVATE_KEY }}
+        script: |
+          cd /var/www/Starbook
+          git pull origin main
+          source env/bin/activate
+          pip install -r requirements.txt
+          python manage.py migrate
+          python manage.py collectstatic --noinput
+          systemctl restart Starbook
+          systemctl restart nginx
+>>>>>>> 016c8c5 (Add GitHub Actions deployment workflow)
