@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gw-+-alkqx!kly4r)8tds0b8br%b=#$#*@y6j=bxm&#l)%+7f)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # Temporarily enable debug mode
-ALLOWED_HOSTS = ['127.0.0.1', 'starbooks777.com', 'www.starbooks777.com']  # Add your domain here
+DEBUG = True  # Temporarily enable debug mode
+ALLOWED_HOSTS = ['*', 'starbooks777.com', 'www.starbooks777.com']  # Add your domain here
 
 
 # Application definition
