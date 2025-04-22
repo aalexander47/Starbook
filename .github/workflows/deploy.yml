@@ -1,4 +1,4 @@
-name: 🚀 Deploy to VPS
+name: 🚀 Deployment to VPS - Starbook
 
 on:
   push:
