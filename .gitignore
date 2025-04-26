@@ -1,1 +1,3 @@
 .ssh/
+.gunicorn.service
+gunicorn.service

@@ -19,9 +19,9 @@ python manage.py migrate
 python manage.py collectstatic --noinput
 
 # Restart Gunicorn
-sudo systemctl restart Starbook
+sudo systemctl restart gunicorn  # Ensure the service name is correct
 
 # Restart Nginx (optional if changed)
-sudo systemctl restart nginx
+sudo systemctl reload nginx
 
 echo "✅ Deployment completed!"
