@@ -20,13 +20,11 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
           script: |
+            set -e  # Exit immediately if a command exits with a non-zero status
             cd /var/www/Starbook
-            git pull origin main
-            source env/bin/activate
-            pip install -r requirements.txt
-            python manage.py migrate
-            python manage.py collectstatic --noinput
-            sudo systemctl restart gunicorn
-            sudo systemctl reload nginx
+            if [ ! -x "deploy.sh" ]; then
+              chmod +x deploy.sh  # Ensure the script is executable
+            fi
+            ./deploy.sh  # Run the deployment script
 
-            
+
