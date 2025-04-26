@@ -676,6 +676,45 @@ section {
     color: #ffffff; /* Ensure text color remains unchanged */
 }
 
+/* Timeline Paragraph Styling */
+.timeline-item p {
+    font-family: 'Roboto', sans-serif; /* Ensure Roboto font is applied */
+    font-size: 20px; /* Keep the font size */
+    line-height: 1.1; /* Reduce line height for less spacing */
+    color: #ffffff; /* Set default text color to white */
+    margin: 0.2rem 0; /* Reduce margin between paragraphs */
+    text-align: center; /* Center-align the text */
+}
+
+/* Styling for uppercase text in timeline paragraphs */
+.timeline-item p span.uppercase {
+    color: #FFD700; /* Golden color for uppercase text */
+    font-weight: bold; /* Make it bold for emphasis */
+}
+
+/* Styling for Hindi text in timeline paragraphs */
+.timeline-item p.hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif; /* Use a font that supports Devanagari script */
+    font-size: 12px; /* Reduced font size */
+    color: #ffffff; /* White text color */
+    margin-top: 0.2rem; /* Add some spacing above */
+    text-align: center; /* Center-align the text */
+    font-style: italic; /* Italicize the text */
+}
+
+.timeline-step {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-size: 1.2rem; /* Increased font size */
+    font-weight: bold; /* Bold text */
+    font-family: 'Arial', sans-serif; /* Updated font */
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background: #FFD700; /* Golden background for all steps */
+    color: #000000; /* Black text for contrast */
+}
+
 .timeline-items {
     flex: 1;
     display: flex;
@@ -687,12 +726,32 @@ section {
     position: absolute;
     top: -20px;
     left: 10px;
-    background: #FFD700; /* Golden background for step text */
-    color: #000000; /* Black text */
+    font-size: 1.2rem; /* Increased font size */
+    font-weight: bold; /* Bold text */
+    font-family: 'Arial', sans-serif; /* Updated font */
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    font-size: 0.9rem;
-    font-weight: bold;
+}
+
+#step1 .timeline-step {
+    background: #FFD700; /* Orange background for Step 1 */
+    color: #000000; /* Black text */
+}
+
+#step2 .timeline-step {
+    background: #FFD700; /* Green background for Step 2 */
+    color: #000000; /* Black text */
+}
+
+#step3 .timeline-step {
+    background: #FFD700; /* Blue background for Step 3 */
+    color: #000000; /* Black text */
+   /* White text */
+}
+
+#step4 .timeline-step {
+    background: #FFD700; /* Golden background for Step 4 */
+    color: #000000; /* Black text */
 }
 
 .timeline-item img.timeline-icon {
@@ -707,6 +766,8 @@ section {
     font-weight: bold;
     color: #FFD700; /* Golden color for the heading */
     margin-bottom: 1rem;
+    font-style: italic; /* Make the heading italic */
+    line-height: 1.1; /* Reduce line height for the heading */
 }
 
 /* Section 4: 3x2 Grid */
@@ -785,12 +846,20 @@ faq-item p {
 
 /* FAQ Disclaimer */
 .faq-disclaimer {
-    text-align: center; /* Center-align text */
+    text-align: justify; /* Align text properly with equal spacing on both sides */
     margin: 0 auto; /* Center the container */
     max-width: 800px; /* Limit the width for better readability */
-    color: #ffffff; /* Ensure text is white */
+    color: #aea8a8; /* Light grey text color */
     line-height: 1.4; /* Decrease line spacing */
     font-size: 0.7rem; /* Decrease font size */
+}
+
+/* Responsive Design for FAQ Disclaimer */
+@media (max-width: 768px) {
+    .faq-disclaimer {
+        padding: 0 1rem; /* Add padding for smaller screens */
+        font-size: 0.8rem; /* Slightly increase font size for readability */
+    }
 }
 
 /* Hide Swiper navigation arrows and dots */
@@ -814,6 +883,8 @@ faq-item p {
     font-weight: bold;
     color: #FFD700; /* Golden color for the heading */
     margin-bottom: 2rem;
+    font-style: italic; /* Make the heading italic */
+    line-height: 1.1; /* Reduce line height for the heading */
 }
 
 .icon-grid-container {
@@ -977,6 +1048,25 @@ faq-item p {
     }
 }
 
+/* Responsive Design for Collage Items */
+@media (max-width: 768px) {
+    .collage-item {
+        height: 150px; /* Further reduce height for smaller devices */
+        padding: 0.8rem; /* Adjust padding for better spacing */
+        gap: 0.4rem; /* Reduce gap between elements */
+    }
+
+    .collage-item img {
+        max-width: 45%; /* Further reduce image size for better fit */
+        height: auto;
+    }
+
+    .collage-item .btn {
+        font-size: 0.8rem; /* Adjust button font size */
+        padding: 0.3rem 0.6rem; /* Adjust button padding */
+    }
+}
+
 /* GIF Loader */
 .loader-wrapper {
     position: fixed; /* Cover the entire page */
@@ -1006,11 +1096,15 @@ faq-item p {
     margin: 0;
 }
 
+/* Payment Heading Styling */
 .payment-heading {
+    text-align: center;
     font-size: 2rem;
     font-weight: bold;
     color: #FFD700; /* Golden color for the heading */
     margin-bottom: 2rem;
+    font-style: italic; /* Make the heading italic */
+    line-height: 1.1; /* Reduce line height for the heading */
 }
 
 .payment-carousel {
@@ -1048,3 +1142,56 @@ faq-item p {
         max-width: 100px; /* Adjust image size for smaller screens */
     }
 }
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 80px; /* Increase logo size */
+    }
+    .header-button {
+        margin-left: auto; /* Push the button to the far right */
+        margin-right: 10px; /* Add some spacing from the edge */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: space-between; /* Ensure logo and button are spaced apart */
+    }
+
+    .header-button {
+        margin-left: auto; /* Push the button to the far right */
+        margin-right: 0; /* Remove any extra margin */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        display: flex; /* Ensure flexbox layout */
+        justify-content: space-between; /* Space logo and button apart */
+        align-items: center; /* Align items vertically */
+    }
+
+    .header-button {
+        margin-left: auto; /* Push the button to the far right */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        display: flex; /* Ensure flexbox layout */
+        justify-content: space-between; /* Space logo and button apart */
+        align-items: center; /* Align items vertically */
+    }
+
+    .logo {
+        margin-left: 0; /* Ensure logo stays on the leftmost side */
+    }
+
+    .header-button {
+        margin-left: auto; /* Push the button to the far right */
+    }
+}
+
+
+
