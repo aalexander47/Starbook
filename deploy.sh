@@ -19,10 +19,16 @@ git fetch origin main
 git reset --hard origin/main  # Ensure the local branch matches the remote
 git clean -fd  # Remove untracked files and directories
 
+# Ensure the virtual environment exists
+if [ ! -d "env" ]; then
+  python3 -m venv env  # Create virtual environment
+fi
+
 # Activate virtual environment
 source env/bin/activate
 
 # Install dependencies
+pip install --upgrade pip  # Upgrade pip to avoid compatibility issues
 pip install -r requirements.txt
 
 # Apply migrations
@@ -32,7 +38,7 @@ python manage.py migrate
 python manage.py collectstatic --noinput
 
 # Restart Gunicorn
-sudo systemctl restart gunicorn  # Ensure the service name is correct
+sudo systemctl restart gunicorn
 
 # Restart Nginx (optional if changed)
 sudo systemctl reload nginx
