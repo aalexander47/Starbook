@@ -1252,14 +1252,26 @@ faq-item p {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
-/* Responsive Design for Close Button */
-@media (max-width: 768px) {
-    .close-popup {
-        width: 40px; /* Smaller size for smaller screens */
-        height: 40px; /* Smaller size for smaller screens */
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        top: 10px; /* Adjust position for smaller screens */
-        right: 10px; /* Adjust position for smaller screens */
+/* Video Section Styling */
+.video-section {
+    display: none; /* Hidden by default */
+    width: 100%;
+    padding: 2rem 0;
+    background: #1a1a1a; /* Darker shade of black */
+    text-align: center;
+}
+
+.video-container video {
+    width: 90%; /* Adjust video width */
+    max-width: 600px; /* Limit max width */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Show video section only on mobile and tablet devices */
+@media (max-width: 1024px) {
+    .video-section {
+        display: block !important; /* Ensure visibility on mobile and tablet devices */
     }
 }
 
