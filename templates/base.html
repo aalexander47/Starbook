@@ -13,6 +13,16 @@
     <script src="{% static 'js/timeline.js' %}"></script>
 </head>
 <body>
+    <!-- Video Popup -->
+    <div class="video-popup" id="video-popup">
+        <button class="close-popup" id="close-popup">&times;</button> <!-- Moved outside the player -->
+        <div class="video-popup-content">
+            <video controls autoplay>
+                <source src="{% static 'videos/intro.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
     <header>
         <div class="header-container">
             <div class="logo">
@@ -49,6 +59,26 @@
                     loader.style.transition = 'opacity 0.5s ease';
                     setTimeout(() => loader.style.display = 'none', 500); // Remove loader after fade-out
                 }, 3000); // Ensure loader is displayed for 3 seconds
+            }
+        });
+
+        // Video Popup Logic
+        window.addEventListener('load', function () {
+            const videoPopup = document.getElementById('video-popup');
+            const closePopup = document.getElementById('close-popup');
+
+            // Show the popup on page load
+            if (videoPopup) {
+                videoPopup.style.display = 'flex';
+            }
+
+            // Close the popup when the close button is clicked
+            if (closePopup) {
+                closePopup.addEventListener('click', function () {
+                    if (videoPopup) {
+                        videoPopup.style.display = 'none';
+                    }
+                });
             }
         });
     </script>
