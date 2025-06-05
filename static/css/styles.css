@@ -22,12 +22,13 @@ header {
     align-items: center;
     justify-content: space-between; /* Ensure logo and button are on opposite sides */
     position: sticky;
-    top: 0;
+    top: 38px; /* Stick below the topbar-bonus */
     z-index: 1000; /* Ensure it stays above other elements */
     background: #000000; /* Match header background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
     padding: 0.5rem 1rem; /* Adjust padding for better spacing */
     border-bottom: 3px solid #FFD700; /* Golden border only on the bottom */
+    /* Remove margin-top */
 }
 
 .header-container {
@@ -1268,10 +1269,75 @@ faq-item p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Show video section only on mobile and tablet devices */
-@media (max-width: 1024px) {
-    .video-section {
-        display: block !important; /* Ensure visibility on mobile and tablet devices */
+/* Top Bar: Welcome Bonus Scroller */
+.topbar-bonus {
+    width: 100%;
+    background: #FFD700;
+    color: #20165d;
+    font-weight: bold;
+    font-size: 1.1rem;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1100; /* Higher than header */
+    height: 38px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #fff;
+}
+
+.topbar-bonus__scroller {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.topbar-bonus__scroller span {
+    display: inline-block;
+    flex: 0 0 auto;
+    min-width: 100vw;
+    padding-right: 4vw;
+    animation: topbar-scroll 18s linear infinite;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    will-change: transform;
+}
+
+.topbar-bonus__scroller span + span {
+    margin-left: 0;
+}
+
+@keyframes topbar-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+/* Responsive adjustments for topbar */
+@media (max-width: 768px) {
+    .topbar-bonus {
+        font-size: 0.9rem;
+        height: 30px;
+    }
+    .topbar-bonus__scroller span {
+        font-size: 0.9rem;
+        min-width: 100vw;
+        padding-right: 4vw;
+    }
+}
+
+/* Responsive adjustment for header margin on small screens */
+@media (max-width: 768px) {
+    header {
+        margin-top: 30px; /* Height of .topbar-bonus on mobile */
     }
 }
 
